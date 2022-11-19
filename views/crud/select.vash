@@ -1,0 +1,42 @@
+<ul>
+  <li class="method">
+    <h3>/api</h3>
+    <p>Url ini membuat saya mengambilkan semua data yang ada dengan tujuan semua data agar dapat dilihat dan dipakai sesuai keinginan tetapi jangan terlalu sering menggunakan cara ini karena jika terlalu banyak mengambil data maka memori penuh dan akan memberatkan komputer :( Anda</p>
+    <h4>Example</h4>
+    <code>
+      <ul>
+        <li><a href="@model.url/api" target="_blank">@model.url/api</a></li>
+      </ul>
+    </code>
+  </li>
+  <li class="method">
+    <h3>/api/:request</h3>
+    <p>Url ini merupakan yang paling baik untuk digunakan karena mengambil data sesuai yang dibutuhkan, Mungkin anda sedikit bingung dengan maksud urlnya jika begitu saya akan kasih tahu anda caranya.
+      <h4>Example</h4>
+      <code>
+        <ul>
+          <li><a href="@model.url/api/nama" target="_blank">@model.url/api/nama</a>
+          </li>
+          <li> <a href="@model.url/api/deskripsi" target="_blank">@model.url/api/deskripsi</a></li>
+          <li> <a href="@model.url/api/visimisi" target="_blank">@model.url/api/visimisi</a></li>
+          <li> <a href="@model.url/api/keunggulan" target="_blank">@model.url/api/keunggulan</a></li>
+          <li> <a href="@model.url/api/kontak" target="_blank">@model.url/api/kontak</a></li>
+          <li> <a href="@model.url/api/produk" target="_blank">@model.url/api/produk</a></li>
+          <li> <a href="@model.url/api/testimoni" target="_blank">@model.url/api/testimoni</a></li>
+        </ul>
+      </code>
+    </p>
+  </li>
+  <li class="method">
+    <h3>/api/produk/:id</h3>
+    <p>Url ini merupakan cara anda mengambil produk satu persatu biasanya di pakai saat membutuhkan detail dari produk tersebut, jika anda bertanya kenapa harus diadakan cara ini tapi ada cara ambil semua data produk, jawabanya sama seperti cara pertama yaitu agar tidak memberatkan memori <i class="warning">Ambillah Sesuai Yang Diperlukan</i>
+      <h4>Example</h4>
+      <code>
+        <ul>
+          <li><a href="@model.url/api/produk/5001" target="_blank">@model.url/api/produk/5001</a>
+          </li>
+        </ul>
+      </code>
+    </p>
+  </li>
+</ul>

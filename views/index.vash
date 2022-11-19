@@ -1,0 +1,33 @@
+@html.extend('layout',function(model){
+
+  @html.block('body',function(model){
+            <h1>Halaman User Guide API @model.title</h1>
+            <p>Jika Anda pernah belajar Restful API selamat anda boleh gunakan saya, sebelumnya perkenalkan saya merupakan pelayan yang bersedia mengirim dan mengambilkan keinginan Anda</p>
+            <p>Jadi saya akan memberikan informasi cara agar dapat memerintah saya agar Anda segara dapat apa yang diinginkan</p>
+            <div class="btn-list">
+              <button id="btn-select" class="btn-req">SELECT REQUEST</button>
+              <button id="btn-update" class="btn-req">UPDATE REQUEST</button>
+              <button id="btn-create" class="btn-req">CREATE REQUEST</button>          
+              <button id="btn-delete" class="btn-req">DELETE REQUEST</button>          
+            </div>
+
+            <section id="content">
+              @html.include('crud/update')
+            </section>
+
+            <script type="text/javascript">
+
+                const moveRequest = (btn_req, linkContent)=>{
+                  const btn = document.querySelector(btn_req);
+                  btn.addEventListener('click',()=>{
+                  document.querySelector('#content').innerHTML = `${linkContent}`
+                  })
+                }
+                moveRequest('#btn-select',`@html.include('crud/select')`)
+                moveRequest('#btn-update',`@html.include('crud/update')`)
+              
+            </script>
+
+    });
+
+});

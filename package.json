@@ -3,15 +3,23 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "start-dev" : "SET DEBUG=ranprecast-back-end:* & npm start"
+    "start": "supervisor ./bin/www",
+    "start-dev": "SET DEBUG=ranprecast-back-end:* & npm start"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "vash": "^0.13.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "supervisor": "^0.12.0",
+    "tailwindcss": "^3.2.3"
   }
 }

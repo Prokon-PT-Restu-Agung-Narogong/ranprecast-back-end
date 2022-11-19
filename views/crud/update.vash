@@ -1,0 +1,77 @@
+<ul>
+  <li class="method">
+    <h3>/api/nama/</h3>
+    <h4>Method : POST</h4>
+    <p>Jika Anda ingin merubah nama perusahaan cara nya cukup dengan masukan url /api/nama dengan method POST lalu kirim value nama nya 
+      <h4>Example</h4>
+      <code>
+        <ul>
+          <li>
+            <a href="@model.url/api/nama" target="_blank">@model.url/api/nama</a>
+          </li>
+        </ul>
+      </code>
+      <h4>Try it</h4>
+      <div>
+        <form method="POST" action="@model.url/api/nama">
+            <input required type="text" name="nama" placeholder="Masukan Nama Perusahaan">
+            <i>Saya akan mengirimkan value yang di input ke alamat @model.url/api/nama</i>
+            <br>
+            <input type="submit" value="Kirim">
+        </form>
+        <form method="POST" action="@model.url/api/nama">
+            <input type="submit" name="default" value="Default">
+        </form>
+      </div>
+    </p>
+  </li>
+  <li class="method bg-red-200 p-8">
+    <h3>/api/deskripsi/</h3>
+    <h4>Method : POST</h4>
+    <p>Jika Anda ingin merubah deskripsi perusahaan cara nya cukup dengan masukan url /api/deskripsi dengan method POST lalu kirim value deskripsi nya 
+      <h4>Example</h4>
+      <code>
+        <ul>
+          <li>
+            <a href="@model.url/api/deskripsi" target="_blank">@model.url/api/deskripsi</a>
+          </li>
+        </ul>
+      </code>
+      <h4>Try it</h4>
+      <form method="POST" action="@model.url/api/deskripsi">
+          <input required type="text" name="deskripsi" placeholder="Masukan Deskripsi Perusahaan">
+          <i>Saya akan mengirimkan value yang di input ke alamat @model.url/api/deskripsi</i>
+          <br>
+          <input type="submit" value="Kirim">
+      </form>
+      <form method="POST" action="@model.url/api/deskripsi">
+          <input type="submit" name="default" value="Default">
+      </form>
+    </p>
+  </li>
+  <li class="method">
+    <h3>/api/visimisi/</h3>
+    <h4>Method : POST</h4>
+    <p>Jika Anda ingin merubah deskripsi perusahaan cara nya cukup dengan masukan url /api/deskripsi dengan method POST lalu kirim value deskripsi nya 
+      <h4>Example</h4>
+      <code>
+        <ul>
+          <li>
+            <a href="@model.url/api/visimisi" target="_blank">@model.url/api/visimisi</a>
+          </li>
+        </ul>
+      </code>
+      <h4>Try it</h4>
+      <form method="POST" action="@model.url/api/visimisi">
+          <input required type="text" name="visi" placeholder="Masukan Visi Perusahaan">
+          <input required type="text" name="misi" placeholder="Masukan Misi Perusahaan">
+          <i>Saya akan mengirimkan value yang di input ke alamat @model.url/api/visimisi</i>
+          <br>
+          <input type="submit" value="Kirim">
+      </form>
+      <form method="POST" action="@model.url/api/visimisi">
+          <input type="submit" name="default" value="Default">
+      </form>
+    </p>
+  </li>
+</ul>

@@ -1,8 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  padding: 50px;
+  padding: 10px 80px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  max-width: 1366px;
+  margin: auto;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+}
+
+li{
+  list-style: none;
+  margin: 10px 0;
+}
+.method:hover code > * , .method:hover code > ul li a{
+  background-color: black;
+  color: white;
+}
+.method{
+  width: 100%;
+  padding: 10px;
+  margin: 10px auto;
+  border: 2px solid silver;
+}
+
+code > *, code > ul li a{
+  padding: 5px;
+  color: black;
+}
+
+.warning{
+  color : black;
+  font-weight: bold;
+}
+
+.btn-list{
+  width: 50%;
+  display: flex;
+}
+
+.btn-req{
+  margin: 0 auto;
+  border: 0;
+  background-color: black;
+  padding:10px;
+  color: white;
+  cursor: pointer;
+}
+
+
+input[type="submit"]{
+  border: 2px solid black;
+  color:black;
+  background-color: white;
+  padding: 4px;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.m-auto{
+  margin: auto;
 }

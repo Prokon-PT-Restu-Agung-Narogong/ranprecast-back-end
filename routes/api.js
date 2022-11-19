@@ -3,30 +3,61 @@ var router = express.Router();
 
 
 /* GET dataHeader listing. */
-let data = {
-  nama : "PT. Restu Agung Narogong",
-  deskripsi : `PT Restu Agung Narogong adalah perusahaan yang bergerak di bidang Kontraktor, Supplier, manufacture, Fabrikasi & Engineering. Selain itu PT. Restu agung Narogong juga memiliki beberapa unit usaha yang mana salah satunya adalah RAN PRECAST.`,
-  visimisi: {
-    visi : "Menjadikan perusahaan industry beton yang menghasilkan produk berkualitas, dengan mengutamakan “research and development” serta inovasi, sehingga menjadi perusahaan industry beton yang bertaraf internasional.",
-    misi : `Menghasilkan produk-produk inovatif dan berkualitas, yang dapat mengikuti perubahan dan perkembangan zaman.
-    Menjalin Kerjasama dengan mengedepankan profesionalisme, integritas. Kejujuran dan keadilan yang berfokus pada kebutuhan pelanggan.
-    Mewujudkan SDM Ketenagakerjaan yang kompeten, dan membuka akses kesempatan kerja yang lebih luas.`,
-  },
-  kontak : [{
-    alamat : "Jl. Raya PPLI, Ds. Nambo Kec. Klapanungga Kab. Bogor 16820 – Jawa Barat (Workshop 1)",
-    telepon : "+62 281-890-2251 (Fax)",
-  },{
-    alamat : "Ds. Klapasawit Kec. Kalimanah Kab. Purbalingga – Jawa Tengah (Workshop 2)",
-    telepon : "+62 858-1735-5087"
-  }]  
-}
+let data = require('./data.js')
+let dataDefault = require('./data-default.js')
 
 router.get('/', function(req, res, next) {
-  res.send(JSON.stringify(data));
+  res.send(data);
 });
 
-router.get('/:id', function(req, res, next) {
-  res.send(JSON.stringify(data[req.params.id]));
+router.get('/:req_title', function(req, res, next) {
+  res.send(data[req.params.req_title]);
 });
+
+router.get('/produk/:id', (req,res,next)=>{
+  const filterDataProduct = data.produk.filter((e)=>{
+    return e.id.toUpperCase() == req.params.id.toUpperCase()
+  })
+  if(filterDataProduct.length != 0){
+    res.send(filterDataProduct)
+  }else{
+    res.send({
+      error : "505",
+      message : `We No Have Product By ID ${req.params.id}`
+    });
+  }
+})
+
+router.all('/nama', function(req, res, next) {
+  if(req.body.nama != ""){
+    data.nama = req.body.nama;
+  }else if(res.send(req.body.default) == "Default"){
+    data.nama = dataDefault.nama;
+  }
+  res.redirect('/')
+});
+
+router.all('/deskripsi', function(req, res, next) {
+  if(req.body.deskripsi != ""){
+    data.deskripsi = req.body.deskripsi;
+  }else if(res.send(req.body.default) == "Default"){
+    data.deskripsi = dataDefault.deskripsi;
+  }
+  res.redirect('/')
+});
+
+router.all('/visimisi', function(req, res, next) {
+  console.log(req.body.visimisi);
+  if(req.body.visi != "" && req.body.misi){
+    data.deskripsi = req.body.deskripsi;
+  }else if(res.send(req.body.default) == "Default"){
+    data.deskripsi = dataDefault.deskripsi;
+  }
+  res.redirect('/')
+});
+
+
 
 module.exports = router;
+
+

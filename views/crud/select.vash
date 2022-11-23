@@ -15,7 +15,7 @@
       <h4>Example</h4>
       <code>
         <ul>
-          <li><a href="@model.url/api/nama" target="_blank">@model.url/api/nama</a>
+          <li><a href="@model.url/api/hero" target="_blank">@model.url/api/hero</a>
           </li>
           <li> <a href="@model.url/api/deskripsi" target="_blank">@model.url/api/deskripsi</a></li>
           <li> <a href="@model.url/api/visimisi" target="_blank">@model.url/api/visimisi</a></li>

@@ -1,52 +1,30 @@
 <ul>
   <li class="method">
-    <h3>/api/nama/</h3>
+    <h3>/api/hero/</h3>
     <h4>Method : POST</h4>
-    <p>Jika Anda ingin merubah nama perusahaan cara nya cukup dengan masukan url /api/nama dengan method POST lalu kirim value nama nya 
+    <p>Jika Anda ingin merubah nama dan deskripsi perusahaan cara nya cukup dengan masukan url /api/hero dengan method POST lalu kirim value nama nya 
       <h4>Example</h4>
       <code>
         <ul>
           <li>
-            <a href="@model.url/api/nama" target="_blank">@model.url/api/nama</a>
+            <a href="@model.url/api/hero" target="_blank">@model.url/api/hero</a>
           </li>
         </ul>
       </code>
       <h4>Try it</h4>
       <div>
-        <form method="POST" action="@model.url/api/nama">
+        <form method="POST" action="@model.url/api/hero" enctype="multipart/form-data">
+            <input type="file" name="image1">
             <input required type="text" name="nama" placeholder="Masukan Nama Perusahaan">
-            <i>Saya akan mengirimkan value yang di input ke alamat @model.url/api/nama</i>
+            <input required type="text" name="deskripsi" placeholder="Masukan Deskripsi Perusahaan">
+            <i>Saya akan mengirimkan value yang di input ke alamat @model.url/api/hero</i>
             <br>
-            <input type="submit" value="Kirim">
+            <input type="submit" name="submit" value="Kirim">
         </form>
-        <form method="POST" action="@model.url/api/nama">
-            <input type="submit" name="default" value="Default">
+        <form method="POST" action="@model.url/api/hero">
+            <input type="submit" name="submit" value="Default">
         </form>
       </div>
-    </p>
-  </li>
-  <li class="method bg-red-200 p-8">
-    <h3>/api/deskripsi/</h3>
-    <h4>Method : POST</h4>
-    <p>Jika Anda ingin merubah deskripsi perusahaan cara nya cukup dengan masukan url /api/deskripsi dengan method POST lalu kirim value deskripsi nya 
-      <h4>Example</h4>
-      <code>
-        <ul>
-          <li>
-            <a href="@model.url/api/deskripsi" target="_blank">@model.url/api/deskripsi</a>
-          </li>
-        </ul>
-      </code>
-      <h4>Try it</h4>
-      <form method="POST" action="@model.url/api/deskripsi">
-          <input required type="text" name="deskripsi" placeholder="Masukan Deskripsi Perusahaan">
-          <i>Saya akan mengirimkan value yang di input ke alamat @model.url/api/deskripsi</i>
-          <br>
-          <input type="submit" value="Kirim">
-      </form>
-      <form method="POST" action="@model.url/api/deskripsi">
-          <input type="submit" name="default" value="Default">
-      </form>
     </p>
   </li>
   <li class="method">

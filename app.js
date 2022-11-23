@@ -18,12 +18,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(cors({
   origin: ['*'] // akan di rubah menjadi url asli
 }))
+
+// Routes
 app.use('/', indexRouter);
+app.use('/images', express.static(__dirname + '/public/images'))
 app.use('/api', headerRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

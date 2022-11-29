@@ -15,22 +15,21 @@ let data = JSON.parse(`{
     "nama": "PT. Restu Agung Narogong",
     "deskripsi": "PT Restu Agung Narogong adalah perusahaan yang bergerak di bidang Kontraktor, Supplier, manufacture, Fabrikasi & Engineering. Selain itu PT. Restu agung Narogong juga memiliki beberapa unit usaha yang mana salah satunya adalah RAN PRECAST."
   },
-  "visimisi": [{
-    "visi": "Menjadikan perusahaan industry beton yang menghasilkan produk berkualitas, dengan mengutamakan “research and development” serta inovasi, sehingga menjadi perusahaan industry beton yang bertaraf internasional."
-  }, {
+  "visimisi": {
+    "visi": "Menjadikan perusahaan industry beton yang menghasilkan produk berkualitas, dengan mengutamakan “research and development” serta inovasi, sehingga menjadi perusahaan industry beton yang bertaraf internasional.",
     "misi": "Menghasilkan produk-produk inovatif dan berkualitas, yang dapat mengikuti perubahan dan perkembangan zaman. Menjalin Kerjasama dengan mengedepankan profesionalisme, integritas. Kejujuran dan keadilan yang berfokus pada kebutuhan pelanggan. Mewujudkan SDM Ketenagakerjaan yang kompeten, dan membuka akses kesempatan kerja yang lebih luas."
-  }],
+  },
   "keunggulan": [{
     "id" : 1,
     "icon": "${configs.base_url}/images/icons/icon_heart.png",
     "deskripsi": "Produk Berkualitas"
   }, {
     "id" : 2,
-    "icon": "${configs.base_url}/images/icons/icon_trending up.png",
+    "icon": "${configs.base_url}/images/icons/icon_trending_up.png",
     "deskripsi": "Harga bersaing"
   }, {
     "id" : 3,
-    "icon": "${configs.base_url}/images/icons/icon_message_squere.png",
+    "icon": "${configs.base_url}/images/icons/icon_message_square.png",
     "deskripsi": "Layanan fast respon"
   }, {
     "id" : 4,
@@ -46,11 +45,10 @@ let data = JSON.parse(`{
     "deskripsi": "Gratis konsultasi produk"
   }, {
     "id" : 7,
-    "icon": "${configs.base_url}/images/icons/icon_shopping cart.png",
+    "icon": "${configs.base_url}/images/icons/icon_shopping_cart.png",
     "deskripsi": "Melayani dalam jumlah besar maupun kecil"
   }],
   "kontak": [{
-    ""
     "alamat": "Jl. Raya PPLI, Ds. Nambo Kec. Klapanungga Kab. Bogor 16820 – Jawa Barat (Workshop 1)",
     "telepon": "+62 281-890-2251 (Fax)"
   }, {

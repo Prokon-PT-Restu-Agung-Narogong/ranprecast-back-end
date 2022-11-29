@@ -2,39 +2,50 @@ const configs = require('../config/configs');
 
 let data = JSON.parse(`{
   "hero": {
-    "img": [
-      "${configs.base_url}/images/hero/hero-1.jpeg",
-      "${configs.base_url}/images/hero/hero-2.jpeg",
-      "${configs.base_url}/images/hero/hero-3.jpeg"
-    ],
+    "img": [{
+      "id" : 1,
+      "src" : "${configs.base_url}/images/hero/hero-1.jpeg"
+    },{
+      "id" : 2,
+      "src" : "${configs.base_url}/images/hero/hero-2.jpeg"
+    },{
+      "id" : 3,
+      "src" : "${configs.base_url}/images/hero/hero-3.jpeg"
+    }],
     "nama": "PT. Restu Agung Narogong",
     "deskripsi": "PT Restu Agung Narogong adalah perusahaan yang bergerak di bidang Kontraktor, Supplier, manufacture, Fabrikasi & Engineering. Selain itu PT. Restu agung Narogong juga memiliki beberapa unit usaha yang mana salah satunya adalah RAN PRECAST."
   },
-  "visimisi": [{
-    "visi": "Menjadikan perusahaan industry beton yang menghasilkan produk berkualitas, dengan mengutamakan “research and development” serta inovasi, sehingga menjadi perusahaan industry beton yang bertaraf internasional."
-  }, {
+  "visimisi": {
+    "visi": "Menjadikan perusahaan industry beton yang menghasilkan produk berkualitas, dengan mengutamakan “research and development” serta inovasi, sehingga menjadi perusahaan industry beton yang bertaraf internasional.",
     "misi": "Menghasilkan produk-produk inovatif dan berkualitas, yang dapat mengikuti perubahan dan perkembangan zaman. Menjalin Kerjasama dengan mengedepankan profesionalisme, integritas. Kejujuran dan keadilan yang berfokus pada kebutuhan pelanggan. Mewujudkan SDM Ketenagakerjaan yang kompeten, dan membuka akses kesempatan kerja yang lebih luas."
-  }],
+  },
   "keunggulan": [{
+    "id" : 1,
     "icon": "${configs.base_url}/images/icons/icon_heart.png",
     "deskripsi": "Produk Berkualitas"
   }, {
-    "icon": "${configs.base_url}/images/icons/icon_trending up.png",
+    "id" : 2,
+    "icon": "${configs.base_url}/images/icons/icon_trending_up.png",
     "deskripsi": "Harga bersaing"
   }, {
-    "icon": "${configs.base_url}/images/icons/icon_message_squere.png",
+    "id" : 3,
+    "icon": "${configs.base_url}/images/icons/icon_message_square.png",
     "deskripsi": "Layanan fast respon"
   }, {
+    "id" : 4,
     "icon": "${configs.base_url}/images/icons/icon_clock.png",
     "deskripsi": "Ketepatan waktu pengiriman"
   }, {
+    "id" : 5,
     "icon": "${configs.base_url}/images/icons/icon_car.png",
     "deskripsi": "Siap kirim seluruh Indonesia"
   }, {
+    "id" : 6,
     "icon": "${configs.base_url}/images/icons/icon_people.png",
     "deskripsi": "Gratis konsultasi produk"
   }, {
-    "icon": "${configs.base_url}/images/icons/icon_shopping cart.png",
+    "id" : 7,
+    "icon": "${configs.base_url}/images/icons/icon_shopping_cart.png",
     "deskripsi": "Melayani dalam jumlah besar maupun kecil"
   }],
   "kontak": [{
@@ -46,43 +57,43 @@ let data = JSON.parse(`{
   }],
   "portofolio": [{
     "id": 5001,
-    "img": "${configs.base_url}/images/icons/(1).jpeg",
+    "img": "${configs.base_url}/images/portofolio/(1).jpeg",
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5002,
-    "img": "${configs.base_url}/images/icons/(2).jpeg",
+    "img": "${configs.base_url}/images/portofolio/(2).jpeg",
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5003,
-    "img": "${configs.base_url}/images/icons/(3).jpeg",
+    "img": "${configs.base_url}/images/portofolio/(3).jpeg",
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5004,
-    "img": "${configs.base_url}/images/icons/(4).jpeg",
+    "img": "${configs.base_url}/images/portofolio/(4).jpeg",
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5005,
-    "img": "${configs.base_url}/images/icons/(6).jpeg",
+    "img": "${configs.base_url}/images/portofolio/(6).jpeg",
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5005,
-    "img": "${configs.base_url}/images/icons/(7).jpeg",
+    "img": "${configs.base_url}/images/portofolio/(7).jpeg",
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5005,
-    "img": "${configs.base_url}/images/icons/(8).jpeg",
+    "img": "${configs.base_url}/images/portofolio/(8).jpeg",
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5005,
-    "img": "${configs.base_url}/images/icons/(9).jpeg",
+    "img": "${configs.base_url}/images/portofolio/(9).jpeg",
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5005,
-    "img": "${configs.base_url}/images/icons/(10).jpeg",
+    "img": "${configs.base_url}/images/portofolio/(10).jpeg",
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5005,
-    "img": "${configs.base_url}/images/icons/(11).jpeg",
+    "img": "${configs.base_url}/images/portofolio/(11).jpeg",
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }],
   "produk": [{

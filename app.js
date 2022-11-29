@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({
-  origin: ['*'] // akan di rubah menjadi url asli
+  origin: '*' // akan di rubah menjadi url asli
 }))
 
 // Routes

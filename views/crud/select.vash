@@ -20,7 +20,9 @@
           <li> <a href="@model.url/api/deskripsi" target="_blank">@model.url/api/deskripsi</a></li>
           <li> <a href="@model.url/api/visimisi" target="_blank">@model.url/api/visimisi</a></li>
           <li> <a href="@model.url/api/keunggulan" target="_blank">@model.url/api/keunggulan</a></li>
+          <li> <a href="@model.url/api/protofolio" target="_blank">@model.url/api/protofolio</a></li>
           <li> <a href="@model.url/api/kontak" target="_blank">@model.url/api/kontak</a></li>
+
           <li> <a href="@model.url/api/produk" target="_blank">@model.url/api/produk</a></li>
           <li> <a href="@model.url/api/testimoni" target="_blank">@model.url/api/testimoni</a></li>
         </ul>

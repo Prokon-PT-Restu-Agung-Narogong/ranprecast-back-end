@@ -25,7 +25,7 @@ router.get('/:req_title', (req, res, next)=> {
 
 router.get('/produk/:id', (req,res,next)=>{
   const filterDataProduct = data.produk.filter((e)=>{
-    return e.id.toUpperCase() == req.params.id.toUpperCase()
+    return e.id == req.params.id
   })
   if(filterDataProduct.length != 0){
     res.send(filterDataProduct)

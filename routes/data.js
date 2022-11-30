@@ -48,13 +48,16 @@ let data = JSON.parse(`{
     "icon": "${configs.base_url}/images/icons/icon_shopping_cart.png",
     "deskripsi": "Melayani dalam jumlah besar maupun kecil"
   }],
-  "kontak": [{
-    "alamat": "Jl. Raya PPLI, Ds. Nambo Kec. Klapanungga Kab. Bogor 16820 – Jawa Barat (Workshop 1)",
-    "telepon": "+62 281-890-2251 (Fax)"
-  }, {
-    "alamat": "Ds. Klapasawit Kec. Kalimanah Kab. Purbalingga – Jawa Tengah (Workshop 2)",
-    "telepon": "+62 858-1735-5087"
-  }],
+  "kontak": {
+    "alamat_1": "Jl. Raya PPLI, Ds. Nambo Kec. Klapanungga Kab. Bogor 16820 – Jawa Barat (Workshop 1)",
+    "alamat_2": "Ds. Klapasawit Kec. Kalimanah Kab. Purbalingga – Jawa Tengah (Workshop 2)",
+    "telepon" : "+62 281-890-2251",
+    "email" : "ranprecast@gmail.com",
+    "whatsapp_1" : "+6281324198783",
+    "whatsapp_2" : "+6285817355087",
+    "link_instagram" : "https://www.instagram.com/ranprecast/?igshid=YmMyMTA2M2Y%3D",
+    "link_youtube"  : "https://www.youtube.com/channel/UC8Ors0Yr40Q9GZ4rmSBbDRQ"
+  },
   "portofolio": [{
     "id": 5001,
     "img": "${configs.base_url}/images/portofolio/(1).jpeg",

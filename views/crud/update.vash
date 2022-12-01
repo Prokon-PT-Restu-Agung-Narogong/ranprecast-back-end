@@ -14,7 +14,7 @@
       <h4>Try it</h4>
       <div>
         <form method="POST" action="@model.url/api/hero" enctype="multipart/form-data">
-            <input type="file" name="image1">
+            <input type="file" name="image">
             <input required type="text" name="nama" placeholder="Masukan Nama Perusahaan">
             <input required type="text" name="deskripsi" placeholder="Masukan Deskripsi Perusahaan">
             <i>Saya akan mengirimkan value yang di input ke alamat @model.url/api/hero</i>

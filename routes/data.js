@@ -228,6 +228,14 @@ let data = JSON.parse(`{
     "name": "Ridho Ajah",
     "rating": 2,
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
+  }],
+  "visitors": [{
+    "ip_address" : "192.168.1.1",
+    "browser" : "Google Chrome",
+    "city" : "Bandung",
+    "country" : "Indonesia",
+    "isp" : "Telkom",
+    "regionName" : "West Java"
   }]
 }`);
 

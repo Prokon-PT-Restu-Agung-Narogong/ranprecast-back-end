@@ -38,24 +38,35 @@ router.get('/produk/:id', (req,res,next)=>{
 })
 
 
-router.post('/hero',multerSingle({req_name : "image1", location_path : "./public/images/hero/"}) ,(req, res, next)=> {
-  console.log(multerSingle({req_name : "image1", location_path : "./public/images/hero/"}))
-  if(req.body.submit == "Kirim"){
+router.post('/hero',multerSingle({req_name : "image", location_path : "./public/images/hero/"}) ,(req, res, next)=> {
+
     if(req.file){
       data.hero.img.find((e)=>{
         if(e.id == 1){
           e.src =  `${configs.base_url}/images/hero/${req.file.filename}`
         }
       })
-      console.log(data.hero.img);
     }
-    console.log(req.file);
     data.hero.nama = req.body.nama;
     data.hero.deskripsi = req.body.deskripsi;
-  }else if(req.body.submit == "Default"){
-    data.hero = dataDefault.hero;
-  }
-  res.redirect('/')
+});
+
+
+router.post('/visitors' ,(req, res, next)=> {
+    if(req.body.ip_address != null){
+      data.visitors.push({
+        ip_address  : req.body.ip_address,
+        browser : req.body.browser || "Not Found",
+        city : req.body.city || "Not Found",
+        country : req.body.country || "Not Found",
+        isp : req.body.isp || "Not Found",
+        regionName : req.body.regionName || "Not Found",
+      })    
+      res.send({
+        error : "201",
+        message : `Success Created Visitors`
+      });  
+    }
 });
 
 router.all('/visimisi', (req, res, next)=> {

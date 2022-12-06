@@ -10,6 +10,9 @@ const multer = require("multer");
 const path = require("path");
 
 
+// tools
+const formattedToday = require('../tools/formattedToday');
+
 /* GET dataHeader listing. */
 let data = require('./data.js')
 let dataDefault = require('./data-default.js')
@@ -38,6 +41,24 @@ router.get('/produk/:id', (req,res,next)=>{
 })
 
 
+router.post('/testimoni',(req, res, next)=> {
+    var uniq = Date.now().toString(36) + Math.floor(Math.pow(10, 12) + Math.random() * 9*Math.pow(10, 12)).toString(36);
+    if(req.body.name != null){
+      data.testimoni.push({
+        id : uniq,
+        name : req.body.name || "",
+        rating : parseInt(req.body.rating) || "",
+        deskripsi : req.body.deskripsi || ""
+      })    
+      res.send({
+        error : "201",
+        message : `Success Created Testimoni`
+      });  
+    }
+});
+
+
+
 router.post('/hero',multerSingle({req_name : "image", location_path : "./public/images/hero/"}) ,(req, res, next)=> {
 
     if(req.file){
@@ -55,6 +76,8 @@ router.post('/hero',multerSingle({req_name : "image", location_path : "./public/
 router.post('/visitors' ,(req, res, next)=> {
     if(req.body.ip_address != null){
       data.visitors.push({
+        id : new Date().getTime(),
+        date : formattedToday,
         ip_address  : req.body.ip_address,
         browser : req.body.browser || "Not Found",
         city : req.body.city || "Not Found",
@@ -70,7 +93,6 @@ router.post('/visitors' ,(req, res, next)=> {
 });
 
 router.all('/visimisi', (req, res, next)=> {
-  console.log(req.body.visimisi);
   if(req.body.visi != "" && req.body.misi){
     data.deskripsi = req.body.deskripsi;
   }else if(res.send(req.body.default) == "Default"){

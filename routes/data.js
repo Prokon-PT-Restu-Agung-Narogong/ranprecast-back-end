@@ -1,4 +1,5 @@
 const configs = require('../config/configs');
+const visitorsDummy = require('./datadummy/visitors');
 
 let data = JSON.parse(`{
   "hero": {
@@ -200,43 +201,31 @@ let data = JSON.parse(`{
   }],
   "testimoni": [{
     "id": 5001,
-    "img": "https://res.cloudinary.com/dk0z4ums3/image/upload/v1613385369/attached_image/ini-tanda-dan-cara-untuk-berhenti-menjadi-people-pleaser-0-alodokter.jpg",
     "name": "Asep Balon",
     "rating": 2,
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5002,
-    "img": "https://res.cloudinary.com/dk0z4ums3/image/upload/v1613385369/attached_image/ini-tanda-dan-cara-untuk-berhenti-menjadi-people-pleaser-0-alodokter.jpg",
     "name": "Asep Kurnia",
     "rating": 5,
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5003,
-    "img": "https://res.cloudinary.com/dk0z4ums3/image/upload/v1613385369/attached_image/ini-tanda-dan-cara-untuk-berhenti-menjadi-people-pleaser-0-alodokter.jpg",
     "name": "Asep Saepul",
     "rating": 3,
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5004,
-    "img": "https://res.cloudinary.com/dk0z4ums3/image/upload/v1613385369/attached_image/ini-tanda-dan-cara-untuk-berhenti-menjadi-people-pleaser-0-alodokter.jpg",
     "name": "Ridho Roma",
     "rating": 1,
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5005,
-    "img": "https://res.cloudinary.com/dk0z4ums3/image/upload/v1613385369/attached_image/ini-tanda-dan-cara-untuk-berhenti-menjadi-people-pleaser-0-alodokter.jpg",
     "name": "Ridho Ajah",
     "rating": 2,
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }],
-  "visitors": [{
-    "ip_address" : "192.168.1.1",
-    "browser" : "Google Chrome",
-    "city" : "Bandung",
-    "country" : "Indonesia",
-    "isp" : "Telkom",
-    "regionName" : "West Java"
-  }]
+  "visitors": ${visitorsDummy}
 }`);
 
 

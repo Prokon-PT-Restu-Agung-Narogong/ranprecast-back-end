@@ -1,5 +1,5 @@
 const configs = {
-	base_url : "http://localhost:3000"
+	base_url : "https://gateway.ranprecast.com"
 }
 
 module.exports = configs;

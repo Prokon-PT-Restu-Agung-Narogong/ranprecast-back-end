@@ -22,8 +22,200 @@ router.get('/', (req, res, next)=> {
   res.send(data);
 });
 
-router.get('/:req_title', (req, res, next)=> {
-  res.send(data[req.params.req_title]);
+
+router.all('/login',(req, res, next)=>{
+  try{
+    let found = false;
+    data.useradmin.forEach((e)=>{
+      if(e.username == req.body.username && e.password == req.body.password){
+        found = true;
+        res.send({
+          status : "200",
+          data : e,
+        });
+      }
+    })
+    if(!found){
+      res.send({
+        status : "505",
+        message : "Username Dan Password Tidak Di Temukan"
+      })      
+    }
+  }catch(e){
+    res.send({
+      status : "404",
+      message : `Failed Select User Admin`
+    });
+  }
+})
+
+router.post('/useradmin/delete', (req,res,next)=>{
+  try{
+    const objWithIdIndex = data.useradmin.findIndex((obj) => obj.id == req.body.id);
+
+    if (objWithIdIndex > -1) {
+      data.useradmin.splice(objWithIdIndex, 1);
+      res.send({
+        status : "200",
+        message : `Success Delete User Admin`
+      });   
+    }
+  }catch(e){
+    res.send({
+      status : "404",
+      message : `Failed Delete User Admin`
+    });
+  }
+})
+
+router.post('/useradmin/add', (req, res, next)=>{
+  try{
+    var uniq = Date.now().toString(36) + Math.floor(Math.pow(10, 12) + Math.random() * 9*Math.pow(10, 12)).toString(36);
+    data.useradmin.push({
+        id : uniq,
+        username : req.body.username,
+        password : req.body.password,
+        type : req.body.type,
+    });
+    res.send({
+      status : "200",
+      message : `Success Insert User Admin`
+    });
+  }catch(e){
+    res.send({
+      status : "404",
+      message : `Failed Insert User Admin`
+    });
+  }
+})
+
+router.post('/useradmin', (req, res, next)=>{
+  try{
+    data.useradmin.find((e)=>{
+      if(e.id == req.body.id){
+        e.username = req.body.username;
+        e.password = req.body.password;
+        e.type = req.body.type;
+      }
+    });
+    res.send({
+      status : "200",
+      message : `Success Updated User Admin`
+    });
+  }catch(e){
+    res.send({
+      status : "404",
+      message : `Failed Updated User Admin`
+    });
+  }
+})
+
+router.get('/useradmin/:id', (req,res,next)=>{
+  const filterData = data.useradmin.filter((e)=>{
+    return e.id == req.params.id
+  })
+  if(filterData.length != 0){
+    res.send(filterData)
+  }else{
+    res.send({
+      status : "505",
+      message : `We No Have User Admin By ID ${req.params.id}`
+    });
+  }
+})
+
+router.post('/testimoni/delete', (req,res,next)=>{
+  try{
+    const objWithIdIndex = data.testimoni.findIndex((obj) => obj.id == req.body.id);
+
+    if (objWithIdIndex > -1) {
+      data.testimoni.splice(objWithIdIndex, 1);
+      res.send({
+        status : "200",
+        message : `Success Delete Testimoni`
+      });   
+    }
+  }catch(e){
+    res.send({
+      status : "404",
+      message : `Failed Delete Testimoni`
+    });
+  }
+})
+
+router.post('/keunggulan',multerSingle({req_name : "image", location_path : "./public/images/keunggulan/"}), (req, res, next)=>{
+  try{
+    data.keunggulan.find((e)=>{
+      if(e.id == req.body.id){
+        e.icon = (req.file) ? `${configs.base_url}/images/keunggulan/${req.file.filename}` : e.icon;
+        e.deskripsi = req.body.deskripsi;
+      }
+    });
+    res.send({
+      status : "200",
+      message : `Success Updated keunggulan`
+    });
+  }catch(e){
+    res.send({
+      status : "404",
+      message : `Failed Updated keunggulan`
+    });
+  }
+})
+
+router.get('/keunggulan/:id', (req,res,next)=>{
+  const filterData = data.keunggulan.filter((e)=>{
+    return e.id == req.params.id
+  })
+  if(filterData.length != 0){
+    res.send(filterData)
+  }else{
+    res.send({
+      status : "505",
+      message : `We No Have Quality By ID ${req.params.id}`
+    });
+  }
+})
+
+router.post('/tentang',multerSingle({req_name : "image", location_path : "./public/images/tentang/"}), (req, res, next)=>{
+  try{
+    data.tentang.nama = req.body.nama;
+    data.tentang.deskripsi = req.body.deskripsi;
+    data.tentang.visi = req.body.visi;
+    data.tentang.misi = req.body.misi;
+    data.tentang.logo = (req.file) ? `${configs.base_url}/images/tentang/${req.file.filename}` : data.tentang.logo
+    res.send({
+      status : "200",
+      message : `Success Updated Tentang`
+    });
+  }catch(e){
+    res.send({
+      status : "404",
+      message : `Failed Updated Tentang`
+    });
+  }
+})
+
+router.post('/kontak', (req, res, next) =>{
+  try{
+    data.kontak.alamat_1 = req.body.alamat_1;
+    data.kontak.alamat_2 = req.body.alamat_2;
+    data.kontak.telepon = req.body.telepon;
+    data.kontak.email = req.body.email;
+    data.kontak.whatsapp_1 = req.body.whatsapp_1;
+    data.kontak.whatsapp_2 = req.body.whatsapp_2;
+    data.kontak.link_instagram = req.body.link_instagram;
+    data.kontak.link_youtube = req.body.link_youtube;
+    res.send({
+      status : "200",
+      message : `Success Updated Kontak`
+    });
+  }catch(e){
+    res.send({
+      status : "404",
+      message : `Failed Updated Kontak`
+    });
+  }
 });
 
 router.post('/produk/add',multerSingle({req_name : "image", location_path : "./public/images/products/"}), (req,res,next)=>{
@@ -39,12 +231,12 @@ router.post('/produk/add',multerSingle({req_name : "image", location_path : "./p
         img : (req.file) ? `${configs.base_url}/images/products/${req.file.filename}` : ""
       })  
       res.send({
-        error : "200",
+        status : "200",
         message : `Success Tambah Portofolio`
       });
   }catch(e){
     res.send({
-      error : "404",
+      status : "404",
       message : `Failed Tambah Portofolio`
     });
   }
@@ -59,7 +251,7 @@ router.get('/produk/:id', (req,res,next)=>{
     res.send(filterDataProduct)
   }else{
     res.send({
-      error : "505",
+      status : "505",
       message : `We No Have Product By ID ${req.params.id}`
     });
   }
@@ -76,14 +268,14 @@ router.post('/produk',multerSingle({req_name : "image", location_path : "./publi
           e.stok = req.body.stok,
           e.img = (req.file) ? `${configs.base_url}/images/products/${req.file.filename}` : e.img
           res.send({
-            error : "200",
+            status : "200",
             message : `Success Update Product`
           });
         }
     });
   }catch(e){
     res.send({
-      error : "404",
+      status : "404",
       message : `Failed Update Product`
     });
   }
@@ -96,13 +288,13 @@ router.post('/produk/delete', (req,res,next)=>{
     if (objWithIdIndex > -1) {
       data.produk.splice(objWithIdIndex, 1);
       res.send({
-        error : "200",
+        status : "200",
         message : `Success Delete Product`
       });   
     }
   }catch(e){
     res.send({
-      error : "404",
+      status : "404",
       message : `Failed Delete Product`
     });
   }
@@ -116,7 +308,7 @@ router.get('/portofolio/:id', (req,res,next)=>{
     res.send(filterData)
   }else{
     res.send({
-      error : "505",
+      status : "505",
       message : `We No Have Product By ID ${req.params.id}`
     });
   }
@@ -129,13 +321,13 @@ router.post('/portofolio/delete', (req,res,next)=>{
     if (objWithIdIndex > -1) {
       data.portofolio.splice(objWithIdIndex, 1);
       res.send({
-        error : "200",
+        status : "200",
         message : `Success Delete Portofolio`
       });   
     }
   }catch(e){
     res.send({
-      error : "404",
+      status : "404",
       message : `Failed Delete Portofolio`
     });
   }
@@ -151,15 +343,15 @@ router.post('/portofolio/add',multerSingle({req_name : "image", location_path : 
         deskripsi : req.body.deskripsi || ""
       })  
       res.send({
-        error : "200",
+        status : "200",
         message : `Success Delete Portofolio`
       });
     }else{
-      throw error;
+      throw status;
     }
   }catch(e){
     res.send({
-      error : "404",
+      status : "404",
       message : `Failed Delete Portofolio`
     });
   }
@@ -177,12 +369,12 @@ router.post('/portofolio',multerSingle({req_name : "image", location_path : "./p
         }
       })
       res.send({
-        error : "200",
+        status : "200",
         message : `Success Updated Portofolio`
       });
   }catch(e){
       res.send({
-        error : "404",
+        status : "404",
         message : `Failed Updated Portofolio`
       });
   }
@@ -201,25 +393,10 @@ router.post('/testimoni',(req, res, next)=> {
         deskripsi : req.body.deskripsi || ""
       })    
       res.send({
-        error : "201",
+        status : "201",
         message : `Success Created Testimoni`
       });  
     }
-});
-
-
-
-router.post('/hero',multerSingle({req_name : "image", location_path : "./public/images/hero/"}) ,(req, res, next)=> {
-
-    if(req.file){
-      data.hero.img.find((e)=>{
-        if(e.id == 1){
-          e.src =  `${configs.base_url}/images/hero/${req.file.filename}`
-        }
-      })
-    }
-    data.hero.nama = req.body.nama;
-    data.hero.deskripsi = req.body.deskripsi;
 });
 
 
@@ -236,7 +413,7 @@ router.post('/visitors' ,(req, res, next)=> {
         region : req.body.regionName || "Not Found",
       })    
       res.send({
-        error : "201",
+        status : "201",
         message : `Success Created Visitors`
       });  
     }
@@ -251,7 +428,9 @@ router.all('/visimisi', (req, res, next)=> {
   res.redirect('/')
 });
 
-
+router.get('/:req_title', (req, res, next)=> {
+  res.send(data[req.params.req_title]);
+});
 
 module.exports = router;
 

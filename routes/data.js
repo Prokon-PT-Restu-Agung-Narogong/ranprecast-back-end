@@ -1,52 +1,42 @@
 const configs = require('../config/configs');
 const visitorsDummy = require('./datadummy/visitors');
+const useradmin = require('./datadummy/useradmin');
 
 let data = JSON.parse(`{
-  "hero": {
-    "img": [{
-      "id" : 1,
-      "src" : "${configs.base_url}/images/hero/hero-1.jpeg"
-    },{
-      "id" : 2,
-      "src" : "${configs.base_url}/images/hero/hero-2.jpeg"
-    },{
-      "id" : 3,
-      "src" : "${configs.base_url}/images/hero/hero-3.jpeg"
-    }],
+  "tentang": {
+    "logo" :"${configs.base_url}/images/tentang/Logo.png",
     "nama": "PT. Restu Agung Narogong",
-    "deskripsi": "PT Restu Agung Narogong adalah perusahaan yang bergerak di bidang Kontraktor, Supplier, manufacture, Fabrikasi & Engineering. Selain itu PT. Restu agung Narogong juga memiliki beberapa unit usaha yang mana salah satunya adalah RAN PRECAST."
-  },
-  "visimisi": {
+    "deskripsi": "PT Restu Agung Narogong adalah perusahaan yang bergerak di bidang Kontraktor, Supplier, manufacture, Fabrikasi & Engineering. Selain itu PT. Restu agung Narogong juga memiliki beberapa unit usaha yang mana salah satunya adalah RAN PRECAST.",
     "visi": "Menjadikan perusahaan industry beton yang menghasilkan produk berkualitas, dengan mengutamakan “research and development” serta inovasi, sehingga menjadi perusahaan industry beton yang bertaraf internasional.",
     "misi": "Menghasilkan produk-produk inovatif dan berkualitas, yang dapat mengikuti perubahan dan perkembangan zaman. Menjalin Kerjasama dengan mengedepankan profesionalisme, integritas. Kejujuran dan keadilan yang berfokus pada kebutuhan pelanggan. Mewujudkan SDM Ketenagakerjaan yang kompeten, dan membuka akses kesempatan kerja yang lebih luas."
   },
   "keunggulan": [{
     "id" : 1,
-    "icon": "${configs.base_url}/images/icons/icon_heart.png",
+    "icon": "${configs.base_url}/images/keunggulan/icon_heart.png",
     "deskripsi": "Produk Berkualitas"
   }, {
     "id" : 2,
-    "icon": "${configs.base_url}/images/icons/icon_trending_up.png",
+    "icon": "${configs.base_url}/images/keunggulan/icon_trending_up.png",
     "deskripsi": "Harga bersaing"
   }, {
     "id" : 3,
-    "icon": "${configs.base_url}/images/icons/icon_message_square.png",
+    "icon": "${configs.base_url}/images/keunggulan/icon_message_square.png",
     "deskripsi": "Layanan fast respon"
   }, {
     "id" : 4,
-    "icon": "${configs.base_url}/images/icons/icon_clock.png",
+    "icon": "${configs.base_url}/images/keunggulan/icon_clock.png",
     "deskripsi": "Ketepatan waktu pengiriman"
   }, {
     "id" : 5,
-    "icon": "${configs.base_url}/images/icons/icon_car.png",
+    "icon": "${configs.base_url}/images/keunggulan/icon_car.png",
     "deskripsi": "Siap kirim seluruh Indonesia"
   }, {
     "id" : 6,
-    "icon": "${configs.base_url}/images/icons/icon_people.png",
+    "icon": "${configs.base_url}/images/keunggulan/icon_people.png",
     "deskripsi": "Gratis konsultasi produk"
   }, {
     "id" : 7,
-    "icon": "${configs.base_url}/images/icons/icon_shopping_cart.png",
+    "icon": "${configs.base_url}/images/keunggulan/icon_shopping_cart.png",
     "deskripsi": "Melayani dalam jumlah besar maupun kecil"
   }],
   "kontak": {
@@ -235,7 +225,8 @@ let data = JSON.parse(`{
     "rating": 2,
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }],
-  "visitors": ${visitorsDummy}
+  "visitors": ${visitorsDummy},
+  "useradmin": ${useradmin}
 }`);
 
 

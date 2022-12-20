@@ -189,41 +189,71 @@ let data = JSON.parse(`{
       "Kubus"
     ]
   }],
-  "testimoni": [{
-    "id": 5001,
-    "date" : "2022-12-07",
-    "name": "Asep Balon",
-    "email" : "xxxxx@gmail.com",
-    "rating": 2,
-    "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
-  }, {
-    "id": 5002,
-    "date" : "2022-12-07",
-    "name": "Asep Kurnia",
-    "email" : "xxxxx@gmail.com",
-    "rating": 5,
-    "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
-  }, {
+  "testimoni": [
+  {
     "id": 5003,
     "date" : "2022-12-07",
     "name": "Asep Saepul",
     "email" : "xxxxx@gmail.com",
-    "rating": 3,
+    "rating": 4,
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5004,
     "date" : "2022-12-07",
     "name": "Ridho Roma",
     "email" : "xxxxx@gmail.com",
-    "rating": 1,
+    "rating": 4,
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
   }, {
     "id": 5005,
     "date" : "2022-12-07",
     "name": "Ridho Ajah",
     "email" : "xxxxx@gmail.com",
-    "rating": 2,
+    "rating": 5,
     "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
+  }, {
+    "id": 5006,
+    "date" : "2022-12-07",
+    "name": "Ridho Ajah",
+    "email" : "xxxxx@gmail.com",
+    "rating": 4,
+    "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
+  }, {
+    "id": 5007,
+    "date" : "2022-12-07",
+    "name": "Ridho Ajah",
+    "email" : "xxxxx@gmail.com",
+    "rating": 4,
+    "deskripsi": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
+  },{
+    "id": 5001,
+    "date" : "2022-12-07",
+    "name": "Novita Lusiana",
+    "email" : "xxxxx@gmail.com",
+    "rating": 5,
+    "deskripsi": "Trusted"
+  },{
+    "id": 5002,
+    "date" : "2022-12-07",
+    "name": "Aji Pangestu",
+    "email" : "xxxxx@gmail.com",
+    "rating": 5,
+    "deskripsi": "Produk nya sangat lengkap"
+  },
+  {
+    "id": 5008,
+    "date" : "2022-12-07",
+    "name": "Dikdik Darmawan",
+    "email" : "xxxxx@gmail.com",
+    "rating": 5,
+    "deskripsi": "Konsisten dalam Pekerjaan dan semoga terus berkembang"
+  },{
+    "id": 5008,
+    "date" : "2022-12-07",
+    "name": "Fachry Husaini",
+    "email" : "xxxxx@gmail.com",
+    "rating": 5,
+    "deskripsi": "Pekerjaan cepat di kerjakan "
   }],
   "visitors": ${visitorsDummy},
   "useradmin": ${useradmin}
